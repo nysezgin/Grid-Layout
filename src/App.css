@@ -1,38 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  background: hsl(210, 46%, 95%);
+}
+
 .App {
-  text-align: center;
+  display: grid;
+  row-gap: 20px;
+  column-gap: 20px;
+  margin: 0 10%;
+  padding: 90px 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width: 1024px) {
+  .App {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row dense;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* User */
+
+.user {
+  display: grid;
+  row-gap: 20px;
+  padding: 40px;
+  border-radius: 10px;
   color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 1024px) {
+  .user {
+  padding: 30px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* User Profile */
+
+.user__profile {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .user__profile {
+  font-size: 0.9rem;
+  height: 10%;
+  }
+}
+
+.user__profile-photo {
+  margin-right: 20px;
+  border-radius: 50%;
+  border: solid gray;
+  align-self: center;
+  grid-row: 1 / span 2;
+}
+
+.user__profile-name {
+  align-self: flex-end;
+}
+
+.user__profile-verified {
+  align-self: flex-start;
+  opacity: 0.5;
+}
+
+/* User Review */
+
+.user__review-title {
+  margin-bottom: 20px;
+}
+
+.user__review-text {
+  opacity: 0.7;
+}
+
+/* User Background Colors */
+
+.user:nth-child(1) {
+  background: hsl(263, 55%, 52%) url("./images/bg-pattern-quotation.svg")
+    no-repeat 90% top;
+}
+@media screen and (min-width: 1024px) {
+  .user:nth-child(1) {
+  grid-column: 1 / span 2;
+  }
+}
+.user:nth-child(2) {
+  background: hsl(217, 19%, 35%);
+}
+
+.user:nth-child(3) {
+  background: white;
+  color: black;
+}
+
+.user:nth-child(4) {
+  background: hsl(219, 29%, 14%);
+}
+
+@media screen and (min-width: 1024px) {
+  .user:nth-child(4) {
+  grid-column: 2 / span 2;
+  }
+}
+
+.user:nth-child(5) {
+  background: white;
+  color: black;
+}
+
+@media screen and (min-width: 1024px) {
+  .user:nth-child(5) {
+    grid-column: 4;
+  grid-row: 1 / span 2;
   }
 }
